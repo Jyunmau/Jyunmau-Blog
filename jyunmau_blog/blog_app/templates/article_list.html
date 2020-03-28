@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyunmau-BLog</title>
+    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="/static/assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color:rgb(255,255,255);background-image:url(&quot;/static/assets/img/_MG_5749-HDR.jpg&quot;);background-size:cover;background-repeat:no-repeat;background-position:center;">
+        <div class="container"><a class="navbar-brand" href="/index" style="color:rgb(235,235,235);">一只大元谋的山洞</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" style="width:45px;height:35px;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="margin-top:-2px;margin-left:-6px;height:27px;"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/index" style="color:rgb(234,234,234);">首页</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/article_list" style="color:rgb(234,234,234);">全部文章</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(235,235,235);">文章分类</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                            <h6 class="dropdown-header"
+                                role="presentation">Header</h6>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="article-list">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">全 部 文 章</h2>
+                <p class="text-center">好像也没几篇，就先这样翻吧～</p>
+            </div>
+            <div class="row articles">
+                {% for blog in blog_list %}
+                <div class="col-sm-6 col-md-4 item" style="min-height:285px;"><a href="#"></a>
+                    <h3 class="name">{{blog.title}}</h3>
+                    <p class="description" style="padding-left:8px;padding-right:8px">{{blog.brief}}</p><a href="/article/{{blog.id}}" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>站点技术方案</h3>
+                        <ul>
+                            <li><a href="#">前端：Bootstrap</a><a href="#"></a></li>
+                            <li><a href="#">后端：Nginx+uwsgi+Django</a></li>
+                            <li><a href="#">详细介绍请移步我的Gihub</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>关于我</h3>
+                        <ul>
+                            <li><a href="#">Github-Jyunmau</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>法律信息</h3>
+                        <p>备案号：</p>
+                        <p>内容许可：</p>
+                    </div>
+                </div>
+                <p class="copyright">叙之岁华 © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

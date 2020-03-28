@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyunmau-Blog</title>
+    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="/static/assets/css/styles.min.css">
+    <link href="https://cdn.bootcss.com/github-markdown-css/4.0.0/github-markdown.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color:rgb(255,255,255);background-image:url(&quot;/static/assets/img/_MG_5749-HDR.jpg&quot;);background-size:cover;background-repeat:no-repeat;background-position:center;">
+            <div class="container"><a class="navbar-brand" href="/index" style="color:rgb(235,235,235);">一只大元谋的山洞</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" style="width:45px;height:35px;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="margin-top:-2px;margin-left:-6px;height:27px;"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/index" style="color:rgb(234,234,234);">首页</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/article_list" style="color:rgb(234,234,234);">全部文章</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(235,235,235);">文章分类</a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul>
+            </div>
+    </div>
+    </nav>
+    </div>
+    <div class="article-dual-column">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="intro">
+                        <h1 class="text-center">{{blog.title}}</h1>
+                        <p class="text-center"><span class="by">by</span> <a href="#">{{blog.author}}</a><span class="date">{{blog.timestamp}}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-lg-3 offset-md-1">
+                    <p>Table of Contents</p>
+                    <div>
+                        {% autoescape off %}
+                        {{ toc}}
+                        {% endautoescape %}
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
+                    <div class="markdown-body" style="padding-bottom:80px">
+                        {{ content | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>站点技术方案</h3>
+                        <ul>
+                            <li><a href="#">前端：Bootstrap</a><a href="#"></a></li>
+                            <li><a href="#">后端：Nginx+uwsgi+Django</a></li>
+                            <li><a href="#">详细介绍请移步我的Gihub</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>关于我</h3>
+                        <ul>
+                            <li><a href="#">Github-Jyunmau</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>法律信息</h3>
+                        <p>备案号：</p>
+                        <p>内容许可：</p>
+                    </div>
+                </div>
+                <p class="copyright">叙之岁华 © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
