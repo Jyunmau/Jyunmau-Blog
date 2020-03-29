@@ -21,9 +21,10 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/index" style="color:rgb(234,234,234);">首页</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/article_list" style="color:rgb(234,234,234);">全部文章</a></li>
                     <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(235,235,235);">文章分类</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a>
-                            <h6 class="dropdown-header"
-                                role="presentation">Header</h6>
+                        <div class="dropdown-menu" role="menu">
+                            {% for cate in category_list %}
+                            <a class="dropdown-item" role="presentation" href="/article_list/{{cate}}">{{ cate }}</a>
+                            {% endfor %}
                         </div>
                     </li>
                 </ul>
@@ -33,8 +34,8 @@
     <div class="article-list">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">全 部 文 章</h2>
-                <p class="text-center">好像也没几篇，就先这样翻吧～</p>
+                <h2 class="text-center">{{ BigTitle }}</h2>
+                <p class="text-center">{{ BigBrief }}</p>
             </div>
             <div class="row articles">
                 {% for blog in blog_list %}

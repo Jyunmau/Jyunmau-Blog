@@ -22,7 +22,9 @@ from . import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.blog_index),
     re_path(r'article/(\d{1,})/', views.article),
+    re_path(r'^article_list/([\u4E00-\u9FA5A-Za-z0-9_]+)/$', views.article_list_cate),
     path('index/', views.blog_index),
     path('article_list/', views.article_list),
 ]
